@@ -1,0 +1,19 @@
+<head>
+<link rel="stylesheet" href="/assets/tags_new.css"/>
+</head>
+<body>
+
+<div class="link_new">
+    対象者の編集
+</div>
+<div class="contents">
+<%= form_for @target,html: {class: "link_create"} do |f| %>
+    <%= f.label :対象者名, class: "text" %><BR>
+    <%= f.text_field :target,class: "field" %><BR>
+    <%= f.submit "対象者を編集する",class: "button"%>
+<% end %>
+<div class="back-box">
+    <%=link_to "もどる",targets_path ,class: "back"%>
+</div>
+</div>
+</body>

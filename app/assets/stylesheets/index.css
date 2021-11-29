@@ -1,0 +1,117 @@
+.top{
+    height:60px;
+    background-color: rgba(115, 236, 206, 0.301);
+    padding-top:10px;
+    font-size: 30px;
+    text-align: center;
+}
+.for{
+    float:left;
+    font-size: 20px;
+    padding-left:40px;
+    width:400px;
+    height:60px;
+    position: absolute;
+}
+.for>div:first-child{
+    float:left;
+    font-size: 30px;
+}
+.link_search{
+    width:250px;
+    float:right;
+}
+.tag{
+    float:right;
+    font-size: 20px;
+    padding-right:10px;
+}
+.contents{
+    width:100%;
+    text-align: center;
+    display:inline-flexbox;
+    background-color: teal;
+}
+.link{
+    float: left;
+    width:386px;
+    height:170px;
+    margin:20px;
+    background-color: rgb(25, 42, 116);
+    border-radius: 10px;
+}
+.url{
+    font-size: 20px;
+    color: white;
+    padding-top:10px;
+}
+.link_box2{
+    float: left;
+    width:130px;
+    padding-top:5px;
+}
+.tag_select2{
+    width:130px;
+}
+.url>a{
+    font-size: 20px;
+    color: white;
+    padding-top:10px;
+}
+.url>a:hover{
+    color: rgb(223, 198, 124);
+    text-decoration: none;
+}
+.up{
+    margin-top:5px;
+    height:55px;
+    background-color: rgb(51, 51, 51);
+    text-decoration: none;
+}
+.down{
+    height:90px;
+    background-color: rgb(255, 250, 234);
+    padding:4px 3px;
+}
+.add{
+    height:20px;
+    color: white;
+    text-align: center;
+}
+.add_text{
+    padding-top:2px;
+    padding-right: 10%;
+}
+.edit{
+    height:16px;
+    margin:4px 0 0 5px;
+    float:left;
+    background-color: rgb(109, 218, 0);
+    width:16px;
+    border-radius:20px;
+    color: white;
+}
+.destroy{
+    height:16px;
+    margin:4px 0 0 10px;
+    float:left;
+    background-color: rgb(206, 0, 41);
+    width:16px;
+    border-radius:20px;
+    color: white;
+    font-size: 8px;
+}
+.p{
+    color: white;
+}
+.p:hover{
+    color: white;
+    text-decoration:none;
+}
+.search_button{
+    float:right;
+    background-color: teal;
+    color: white;
+    padding:5px;
+    border-radius: 5px;
+}

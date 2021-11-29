@@ -1,0 +1,25 @@
+<head>
+<link rel="stylesheet" href="/assets/tag_index.css"/>
+</head>
+<body>
+
+<div class="link_new">
+    対象者一覧
+</div>
+<div class="contents">
+    <table>
+    <% @targets.each do |f| %>
+        <div class="content">
+        <tr>
+        <td><%= f.target %></td>
+        <td><%= link_to "編集", edit_target_path(f.id), class: "button" %></td>
+        <td><%= link_to "削除", target_path(f.id), method: :delete, data: { confirm: '削除しますか？' },class: "button" %></td>
+        </tr>
+        </div>
+    <% end %>
+    </table>
+    <div class="back-box">
+        <%=link_to "もどる",new_link_path ,class: "back"%>
+    </div>
+</div>
+</body>

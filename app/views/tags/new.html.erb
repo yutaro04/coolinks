@@ -1,0 +1,19 @@
+<head>
+<link rel="stylesheet" href="/assets/tags_new.css"/>
+</head>
+<body>
+
+<div class="link_new">
+    新しいカテゴリーの作成
+</div>
+<div class="contents">
+<%= form_for @tag,html: {class: "link_create"} do |f| %>
+    <%= f.label :カテゴリー名, class: "text" %><BR>
+    <%= f.text_field :tag_name,class: "field" %><BR>
+    <%= f.submit "カテゴリーを追加する",class: "button"%>
+<% end %>
+<div class="back-box">
+    <%=link_to "もどる",new_link_path ,class: "back"%>
+</div>
+</div>
+</body>

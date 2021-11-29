@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DWC LINKs</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag('link.ico') %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application'%>
+  </head>
+
+  <body>
+    <div class="header">
+      <a href="/" class="links">
+        <img src="/assets/links.png" width="100%" height="80%">
+      </a>
+      <a href="/links/new" class="new">
+      <img src="/assets/link.png" width="100%" height="80%">
+      </a>
+    </div>
+    <%= yield %>
+  </body>
+</html>

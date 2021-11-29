@@ -1,0 +1,50 @@
+<head>
+<link rel="stylesheet" href="/assets/link_new.css"/>
+<script>
+    $(document).ready(function() {
+    $( ".target_select2" ).select2({width: 'resolve'});
+    $( ".tag_select2" ).select2({
+        width: 'resolve',
+        minimumResultsForSearch: -1
+        });
+    });
+</script>
+</head>
+<body>
+
+<div class="link_new">
+    リンクの編集
+</div>
+<div class="contents">
+<%= form_for @link,html: {class: "link_create"} do |f| %>
+    <div class="link_box">
+        <%= f.label "リンク名(表示名)", class: "text" %><br>
+        <%= f.text_field :name, placeholder: "18文字以下で入力してください",class: "field" %>
+    </div>
+    <div class="link_box">
+        <%= f.label :URL, class: "text" %><br>
+        <%= f.text_field :url,class: "field" %>
+    </div>
+    <div class="link_box">
+        <%= f.label :内容 , class: "text"%><br>
+        <%= f.text_area :text,class: "field_big" %>
+    </div>
+    <div class="link_box">
+        <%=link_to "カテゴリー",tags_path, class: "text" %><br>
+        <%= f.select :tag_id, options_for_select(Tag.all.map{|c| [c.tag_name, c.id]}) , { }, {class: "tag_select2"} %>
+        <p class="can_make">新たなカテゴリーを追加する際は<%= link_to "こちら",new_tag_path %>から追加できます。</p>
+    </div>
+    <div class="link_box_last">
+        <%= f.fields_for :target_link do |c| %>
+            <%=link_to "対象者",targets_path, class: "text" %><br>
+            <%= c.select :target_id, options_for_select(Target.all.map{|t| [t.target,t.id]}), { include_hidden: false }, { class: 'target_select2', multiple: true }%>
+            <p class="can_make">新たな対象者を追加する際は<%= link_to "こちら",new_target_path %>から追加できます。</p>
+        <%end%>
+    </div> 
+    <%=f.submit "編集する" ,class: "button"%>
+    <%end%>
+    <div class="back-box">
+        <%=link_to "もどる",root_path ,class: "back"%>
+    </div>
+</div>
+</body>

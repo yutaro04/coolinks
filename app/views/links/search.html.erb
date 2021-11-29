@@ -1,0 +1,46 @@
+<head>
+<link rel="stylesheet" href="/assets/index.css"/>
+<script>
+    $(document).ready(function() {
+    $( ".target_select2" ).select2({width: 'resolve'});
+    $( ".tag_select2" ).select2({
+        width: 'resolve',
+        minimumResultsForSearch: -1
+        });
+    });
+</script>
+</head>
+<body>
+<div class="top">
+    <div class="for">
+        <div>対象者</div>
+        <%= form_with url: links_search_path ,method: :get,local: true,class: "link_search" do |f| %>
+        <div class="link_box2">
+            <%= f.select :target_id, options_for_select(Target.all.map{|c| [c.target, c.id]},{ :selected => @target }) , { }, {class: "tag_select2"} %>
+        </div>
+        <%=f.submit "絞り込み" ,class: "search_button"%>
+        <%end%>
+    </div>
+    リンク一覧
+</div>
+<div class="contents" >
+<% @links.each do |f|%>
+    <div class="link">
+        <div class="add">
+            <%= link_to link_path(f.id),method: :delete, data: { confirm: '削除しますか？' } do %>
+            <div class="destroy">×</div>
+            <% end %>
+            <%= link_to edit_link_path(f.id) do %><div class="edit"></div><% end %>
+            <div class="add_text"><%= f.tag.tag_name %></div>
+        </div>
+        <div class="up">
+            <div class="url"><%= link_to f.name, "#{f.url}",target: :_blank %></div>
+        </div>
+        <div class="down">
+        <%= f.text %><br>
+        </div>
+        
+    </div>
+<%end%>
+</div>
+</body>
