@@ -7,7 +7,8 @@ WORKDIR /coolinks
 COPY Gemfile /coolinks/Gemfile
 COPY Gemfile.lock /coolinks/Gemfile.lock
 
-RUN bundle install
+RUN gem install pg
+RUN bundle install --without production
 
 COPY . /coolinks
 
