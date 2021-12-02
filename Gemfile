@@ -31,6 +31,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 gem 'sassc-rails','>= 2.1.0' 
+
 gem "select2-rails"
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 group :development, :test do

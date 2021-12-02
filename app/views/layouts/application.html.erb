@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DWC LINKs</title>
+    <title>CooLinks</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag('link.ico') %>
@@ -13,10 +13,11 @@
   <body>
     <div class="header">
       <a href="/" class="links">
-        <img src="/assets/links.png" width="100%" height="80%">
+        リンク一覧
       </a>
+      <div>CooLinks</div>
       <a href="/links/new" class="new">
-      <img src="/assets/link.png" width="100%" height="80%">
+        リンクを作成する
       </a>
     </div>
     <%= yield %>
